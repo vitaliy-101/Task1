@@ -1,0 +1,31 @@
+UserId	Name	Age	UserGroupId	Profession	Country	City	Zipcode	Sallary(euro)
+1	Oleg	18	1	Student	US	NY	12345	100
+2	Vit	18	1	Student	RU	Arzamas	12345	100
+3	Evgen	18	2	Student	RU	Sarov	12345-4000	100
+4	Andrei	18	3	Student		NN	12305	100
+5	Daniil	18	3	Student	RU		123459999	100
+100	Egor	18	2	Developer	US	Las Vegas	12345132	1030
+200	Oleg	18	3	Developer	US	Las Vegas	12345123344	2043
+300	Foma	18	2	Developer	US	Las Vegas	123451443234	2012
+99999999	Vasya	18	4	Developer				2421
+999999999	Liza	18	5	Developer	US	Las Vegas	12345	2500
+12344	Artur	18	5	Developer	US		12345	3500
+123	Nekit	18	5	Teacher	RS	NoviSad	12345	2500
+1234	Nastya	40	6	Teacher	RS	NoviSad	12345	2900
+1234	Anna	40	7	Teacher		NoviSad	12345	2508
+999999990	Alena	40	7	Developer	RS	NoviSad	12345	8500
+999999991	Dima	40	7	Developer	RS	NoviSad	12345	1500
+999999992	Dima	55		Developer	RS	NoviSad	12348	2500
+999999993	Dima	10000	8	Teacher	RS		12348	3200
+6	John	80	1	Teacher				1700
+7	Timur	30	4	Teacher	RS	NoviSad	12348	1400
+8	Evgen	34	5	Developer	RS	NoviSad	12348	2008
+8	Evgen	45	6	Developer	RS	NoviSad		900
+1245	Evgen	67	6	Developer	RS		12348	900
+90	Evgen	-100	6	Developer	RS	NoviSad	12348	900
+92	Evgen	57	6	Developer	RS	NoviSad	12348	900
+95	Evgen	57	4	Teacher	RS004324	NoviSad	12348	900
+933	Evgen	21	3	Student	RU	NoviSad	12348	665
+933	Kirill	26	3	Student	RU	NoviSad	12348	565
+933	Liza	24	3	Student	RU	NoviSad	12348	567
+933	Lol	21	3		RU	NoviSad	12348	5676
