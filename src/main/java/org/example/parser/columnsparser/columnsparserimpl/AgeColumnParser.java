@@ -17,7 +17,5 @@ public class AgeColumnParser implements BaseColumnParser {
         else {
             rowData.getUser().setAge(age);
         }
-
-
     }
 }

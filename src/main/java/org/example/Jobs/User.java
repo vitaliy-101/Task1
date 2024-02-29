@@ -2,6 +2,7 @@ package org.example.Jobs;
 
 
 import java.util.HashMap;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,23 @@ public abstract class User {
         this.salary = Integer.valueOf(dataUsers.get("Sallary(euro)"));
         this.yearSalary =Integer.valueOf(dataUsers.get("Sallary(euro)"));
         this.group = group;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return Objects.equals(id, user.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     public abstract Integer calculateSalary();

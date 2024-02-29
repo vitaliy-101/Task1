@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.Jobs.User;
@@ -32,35 +33,15 @@ public class ResultParser {
 
     }
     public void createResult(RowData rowData){
-        if (!findLineError(this.errorUsers, rowData)){
+        if (!findLineError(rowData.getLineNumber())){
             addServiceableGroupAndUser(rowData);
         }
     }
 
-    public boolean findProfessionError(long lineNumber){
-        for (CannotParseReason keyError : this.errorUsers.keySet()) {
-            List<Long> errorLines = this.errorUsers.get(keyError);
-            for (int i = 0; i < errorLines.size(); i ++){
-                if (errorLines.get(i).equals(lineNumber)){
-                    return true;
-                }
-            }
-        }
-        return false;
+    public boolean findLineError(long lineNumber){
+        return this.errorUsers.keySet().stream().anyMatch(x -> this.errorUsers.get(x).stream().anyMatch(y -> y.equals(lineNumber)));
     }
-    private boolean findLineError(Map<CannotParseReason, List<Long>> errorUsers, RowData rowData){
-        Long lineNumber = rowData.getLineNumber();
-        Boolean permission = true;
-        for (CannotParseReason keyError : this.errorUsers.keySet()) {
-            List<Long> errorLines = this.errorUsers.get(keyError);
-            for (int i = 0; i < errorLines.size(); i ++){
-                if (errorLines.get(i).equals(lineNumber)){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+
     private void addServiceableGroupAndUser(RowData rowData){
         Long userGroupId = rowData.getUser().getGroup().getId();
         if (!this.groups.containsKey(userGroupId)) {
@@ -75,5 +56,4 @@ public class ResultParser {
         rowData.getUser().calculateSalary();
         this.usersList.add(rowData.getUser());
     }
-
 }

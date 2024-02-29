@@ -1,6 +1,8 @@
 package org.example.parser.columnsparser.columnsparserimpl;
 
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,14 +22,8 @@ public class UserIdColumnParser implements BaseColumnParser {
         Long userId = Long.valueOf(rowData.getCurrentColumnValue());
         List<User> usersList = resultParser.getUsersList();
         rowData.getUser().setId(userId);
-        if (!usersList.isEmpty()){
-            for(int i = 0; i < usersList.size(); i ++) {
-                if (usersList.get(i).getId().equals(userId)) {
-                    resultParser.addErrorUsers(CannotParseReason.USER_ID_ERROR, rowData.getLineNumber());
-                    break;
-                }
-            }
+        if (!usersList.isEmpty() && usersList.stream().anyMatch(x -> x.getId().equals(userId))){
+            resultParser.addErrorUsers(CannotParseReason.USER_ID_ERROR, rowData.getLineNumber());
         }
-
     }
 }

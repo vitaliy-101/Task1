@@ -1,5 +1,5 @@
 UserId,Name,Age,UserGroupId,Profession,Country,City,Zipcode,Sallary(euro)
-1,Oleg,18,1,Student,US,NY,12345,100
+1,Oleg,18,1,Student,US,NY,12345,100,DASDS
 2,Vit,18,1,Student,RU,Arzamas,12345,100
 3,Evgen,18,2,Student,RU,Sarov,12345-4000,100
 4,Andrei,18,3,Student,,NN,12305,100
